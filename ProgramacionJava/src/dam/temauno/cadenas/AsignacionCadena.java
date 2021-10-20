@@ -1,4 +1,4 @@
-package java.temauno.cadenas;
+package dam.temauno.cadenas;
 /**
  * Clase de ejemplo para asignación de cadenas
  * @author rafa
