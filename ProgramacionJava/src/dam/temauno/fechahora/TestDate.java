@@ -42,8 +42,6 @@ public class TestDate {
 		System.out.println(instante.minusSeconds(24*3600).toString());
 		//dentro de 30 días la fecha y hora será
 		Instant instantePos = instante.plusSeconds(30*24*3600);
-		//el día de la semana dentro de 30 días será....
-		//System.out.println(instantePos.get());
 	}
 
 }
