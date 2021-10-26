@@ -5,9 +5,16 @@ import java.util.Scanner;
 /**
  * Clase en la que se probarán distintos ejemplos de operadores Java
  * @author rafa
+ * @version 1.1
+ * @since 1.0
  *
  */
 public class Operadores {
+	/**
+	 * Método principal de la clase,es el punto de entrada al programa
+	 * @param args Es un array de parámetros que se reciben desde el punto de llamada al
+	 * programa
+	 */
 	public static void main(String[] args) {
 		//El tipo Scanner se puede usar para leer de un flujo de entrada
 		//in es una variable que puedo usar para leer la entrada por consola
@@ -15,6 +22,16 @@ public class Operadores {
 		Scanner in = new Scanner(System.in);
 
 		int contador=0; //tiene el valor predeterminado de su tipo
+		
+		//contador++; //contador = contador +1, primero toma el valor y luego suma
+		
+		System.out.println(2*contador++);
+		
+		contador = 0;
+		//++contador; //contador = contador +1, primero suma y luego toma el valor
+		
+		System.out.println(2*++contador);
+		
 		//muestro el valor de contador y luego lo incremento
 		System.out.println(contador--);
 		//muestro el valor de contador una vez incrementado

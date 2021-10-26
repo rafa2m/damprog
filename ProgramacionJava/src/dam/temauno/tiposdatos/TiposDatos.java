@@ -21,6 +21,7 @@ public class TiposDatos {
 		System.out.println(check2);
 		//wrappers
 		Double distanciaDouble=2345.4566;
+		
 		//tipo de datos primitivo, double (doble precisión)
 		double distanciaD = 2345.4566;
 		System.out.println(distanciaDouble+distanciaD);
