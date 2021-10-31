@@ -1,5 +1,9 @@
 package dam.temados.poo;
-
+/**
+ * Clase base para Automovil y Motocicleta, relación jerárquica
+ * @author Rafa
+ * @version 1.0
+ */
 public class Vehiculo {
 	//propiedad para almacenar la potencia de los objetos de tipo automóvil
 	protected int potencia;
@@ -34,5 +38,12 @@ public class Vehiculo {
 	 */
 	public int getRuedas() {
 		return this.ruedas;
+	}
+	/**
+	 * Devuelve la velocidad actual (double)
+	 * @return double que representa la velocidad actual del vehículo
+	 */
+	public double getVelocidad() {
+		return velocidad;
 	}
 }
