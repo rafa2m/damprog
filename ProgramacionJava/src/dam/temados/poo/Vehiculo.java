@@ -13,11 +13,22 @@ public class Vehiculo {
 	protected boolean elctrico;
 	protected boolean automatico;
 	protected double velocidad;
+	private int incremento=12;
+	//almacenar el número de objetos de tipo Vehículo que se han creado
+	private static int numVehiculo=0;
+	/**
+	 * Constructor de vehículos predeterminado
+	 */
+	public Vehiculo() {
+		Vehiculo.numVehiculo++;
+	}
 	/*
 	 * primer comportamiento del automóvil
 	 */
 	public void acelera() {
-		this.velocidad+=10;
+		//variable local, no es una propiedad
+		int incremento=10;
+		this.velocidad+=this.incremento;	
 	}
 	/*
 	 * segundo comportamiento del automóvil
@@ -46,4 +57,12 @@ public class Vehiculo {
 	public double getVelocidad() {
 		return velocidad;
 	}
+	/**
+	 * Obtiene el número de vehículos creados
+	 * @return int Con el número de vehículos creados
+	 */
+	public static int numVehiculos() {
+		return Vehiculo.numVehiculo;
+	}
+	
 }
