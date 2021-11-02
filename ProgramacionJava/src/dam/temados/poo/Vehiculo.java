@@ -14,6 +14,7 @@ public class Vehiculo {
 	protected boolean automatico;
 	protected double velocidad;
 	private int incremento=12;
+	private int numero;
 	//almacenar el número de objetos de tipo Vehículo que se han creado
 	private static int numVehiculo=0;
 	/**
@@ -64,5 +65,12 @@ public class Vehiculo {
 	public static int numVehiculos() {
 		return Vehiculo.numVehiculo;
 	}
+	public int getNumero() {
+		return numero;
+	}
+	
+	
+	
+	
 	
 }
