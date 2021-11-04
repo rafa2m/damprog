@@ -21,7 +21,7 @@ public class Vehiculo {
 	 * Constructor de vehículos predeterminado
 	 */
 	public Vehiculo() {
-		Vehiculo.numVehiculo++;
+		this.numero=++Vehiculo.numVehiculo;
 	}
 	/*
 	 * primer comportamiento del automóvil
@@ -65,6 +65,7 @@ public class Vehiculo {
 	public static int numVehiculos() {
 		return Vehiculo.numVehiculo;
 	}
+	
 	public int getNumero() {
 		return numero;
 	}
