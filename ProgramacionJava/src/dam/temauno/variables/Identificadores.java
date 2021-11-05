@@ -34,5 +34,6 @@ public class Identificadores {
 		String z; //correcto
 		String e; //correcto
 		String _; //incorrecto
+		String :; //incorrecto, operador Java
 	}
 }
