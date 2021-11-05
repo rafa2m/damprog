@@ -1,5 +1,9 @@
 package dam.temados.poo.cadenas;
-
+/**
+ * Clase para probar métodos de la clase String
+ * @author rafa
+ *
+ */
 public class TestCadena {
 
 	public static void main(String[] args) {
