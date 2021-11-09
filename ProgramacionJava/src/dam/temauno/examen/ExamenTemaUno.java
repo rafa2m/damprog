@@ -4,7 +4,12 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.Scanner;
-
+/**
+ * Clase para mostrar las soluciones propuesta al examen del tema 1. Del cuestionario
+ * sólo se incluyen las soluciones de las preguntas 3 y 5. Del caso práctico están los 5 apartados
+ * @author rafa
+ * @version 1.0
+ */
 public class ExamenTemaUno {
 
 	public static void main(String[] args) {
@@ -68,7 +73,7 @@ public class ExamenTemaUno {
 
 		LocalDate fecha = LocalDate.parse(fechaIntroducida);
 		int anio = fecha.getYear();
-		boolean bisiesto = anio%4==0?(anio%100!=0?anio%400==0:true):true;
+		boolean bisiesto = anio%4==0?(anio%100==0?anio%400==0:true):false;
 		System.out.println(bisiesto);
 		
 		//2. Muestra la fecha anterior en tres formatos distintos (predeterminado, 
