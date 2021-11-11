@@ -1,6 +1,7 @@
 package dam.temauno.operadores;
 /**
  * Solución propuesta para la actividad 1.10
+ * Variantes del operador asignación
  * @author rafa
  *
  */
