@@ -30,7 +30,7 @@ public class ActividadesOperadores {
 		//múltiplo de numero2 o viceversa. Para comprobar si un número
 		//es múltiplo de otro se toma el resto de la división entera del 
 		//número mayor entre el número menor. Si el resto es  0 el número
-		//mayor es múltiplo del menor
+		//mayor es múltiplo del menor.
 		multiplo = numero1>=numero2?numero1%numero2==0:numero2%numero1==0;
 		//se muestra un mensaje indicando la multiplicidad
 		System.out.println(multiplo?"El número " + numero1 + 
