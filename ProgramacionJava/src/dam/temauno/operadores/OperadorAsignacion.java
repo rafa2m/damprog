@@ -10,11 +10,15 @@ public class OperadorAsignacion {
 		int numero=0;
 		//operador asignación con incremento
 		numero += 2;
-		numero *=4;
-		numero -=2;
-		numero /=3;
-		
-
+		System.out.println("numero+=2 =>" + numero);
+		//operador asignación con producto
+		numero *=4; //numero = numero *4;
+		System.out.println("numero*=4 =>" + numero);
+		numero -=2; //numero = numero -1;
+		System.out.println("numero-=2 =>" + numero);
+		numero /=3; //numero = numero/3;
+		System.out.println("numero/=3 =>" + numero);
+		numero %=2; //numero = numero % 2;
+		System.out.println("numero%2 =>" + numero);
 	}
-
 }
