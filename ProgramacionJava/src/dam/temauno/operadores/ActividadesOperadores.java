@@ -27,7 +27,10 @@ public class ActividadesOperadores {
 		numero2 = sc.nextInt();
 		//se utiliza el operador ? para asignar el valor a la variable
 		//multiplo. Si esta variable toma el valor true el numero1 es 
-		//múltiplo de numero2 o viceversa
+		//múltiplo de numero2 o viceversa. Para comprobar si un número
+		//es múltiplo de otro se toma el resto de la división entera del 
+		//número mayor entre el número menor. Si el resto es  0 el número
+		//mayor es múltiplo del menor
 		multiplo = numero1>=numero2?numero1%numero2==0:numero2%numero1==0;
 		//se muestra un mensaje indicando la multiplicidad
 		System.out.println(multiplo?"El número " + numero1 + 
