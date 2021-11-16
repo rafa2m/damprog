@@ -10,6 +10,7 @@ public class ComparaTresDecimales {
 	public static void main(String[] args) {
 		float num1, num2;	
 		Scanner sc = new Scanner(System.in);
+		
 		//se piden los números por consola
 		System.out.println("Introduzca un número con tres decimales:");
 		num1=sc.nextFloat();
