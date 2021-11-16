@@ -11,6 +11,7 @@ public class Emoji {
 		final int TRISTE=1;
 		final int FELIZ=2;
 		final int DORMIDO=3;
+		final int PENSANDO=4;
 		//variable para almacenar el estado
 		int estado = CANSADO;
 		//estado cansado
