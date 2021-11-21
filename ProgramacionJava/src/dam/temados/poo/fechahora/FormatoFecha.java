@@ -1,4 +1,4 @@
-package dam.temados.poo.cadenas;
+package dam.temados.poo.fechahora;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
