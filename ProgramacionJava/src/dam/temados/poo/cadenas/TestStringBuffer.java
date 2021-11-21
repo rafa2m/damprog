@@ -14,6 +14,6 @@ public class TestStringBuffer {
 		//los objetos de String son inmutables
 		String s = new String("¡Hola desde Java! ");
 		s.replace("desde", "a");
-		System.out.println(s); //¡Hola a Java!
+		System.out.println(s); //¡Hola desde Java!
 	}
 }
