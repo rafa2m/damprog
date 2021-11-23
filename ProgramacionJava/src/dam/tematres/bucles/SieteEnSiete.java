@@ -1,6 +1,6 @@
 package dam.tematres.bucles;
 /**
- * Solución propuesta para la actividad 3.12
+ * Solución propuesta para la actividad 3.13
  * @author rafa
  * @version 1.0
  */
