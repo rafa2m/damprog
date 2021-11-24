@@ -1,6 +1,7 @@
 package dam.tematres.bucles;
 /**
  * Ejemplo de triángulo rectángulo 
+ * 
  * @author rafa
  * @version 1.0
  */
