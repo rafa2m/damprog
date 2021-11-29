@@ -5,7 +5,7 @@ import java.util.Scanner;
 /**
  * Solución propuesta para la actividad 3.12
  * @author rafa
- *
+ * @version 1.0
  */
 public class EnteroAHexadecimal {
 	public static void main(String[] args) {
