@@ -30,7 +30,7 @@ public class NumeroDecimal {
 		posDecimal = numero.indexOf(simboloDecimal);
 		System.out.println((posMiles<0 || posDecimal<0)?"Has introducido el número en un formato"
 				+ " incorrecto":"La posición del separador de miles es " + (posMiles+1) + " y la posición"
-				+ " del separador decimal es " + (posDecimal+2));
+				+ " del separador decimal es " + (posDecimal+1));
 	}
 
 }
