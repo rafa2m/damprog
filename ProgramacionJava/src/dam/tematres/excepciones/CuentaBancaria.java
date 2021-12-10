@@ -12,12 +12,15 @@ public class CuentaBancaria {
 	private double saldo;
 	//estado de la cuenta bancaria
 	private int estado;
+	//titular de la cuenta bancaria
+	private Titular titular;
 	/**
 	 * Constructor especializado en construir cuentas bancarias a partir del saldo
 	 * @param saldo Importe inicial de la cuenta bancaria
 	 */
-	public CuentaBancaria(double saldo) {
+	public CuentaBancaria(Titular titular, double saldo) {
 		this.saldo = saldo;
+		this.titular = titular;
 		this.estado = ACTIVA;
 	}
 	/**
