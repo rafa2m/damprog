@@ -1,4 +1,4 @@
-package dam.tematres.condicionales;
+package dam.tematres.seleccion;
 
 import java.util.Scanner;
 
