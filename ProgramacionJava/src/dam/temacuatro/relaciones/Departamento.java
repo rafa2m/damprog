@@ -3,6 +3,7 @@ package dam.temacuatro.relaciones;
 import org.eclipse.jdt.annotation.NonNull;
 
 public class Departamento {
+	private Secretaria secretaria;
 	//número de profesores en el departamento
 	private int numProfesores=0;
 	//nombre del departamento
@@ -39,8 +40,9 @@ public class Departamento {
 	public boolean addProfesor(@NonNull Profesor profesor) {
 		int i=0;
 		boolean encontrado=false;
-		if(numProfesores==4)
+		if(this.numProfesores==4)
 			return false;
+		
 		while(i<profesores.length && profesores[i]!=null && !encontrado) {
 			encontrado = profesores[i].getNif().equals(profesor.getNif());
 			i++;
@@ -73,8 +75,9 @@ public class Departamento {
 	 * @return true si lo elimina, false en caso contrario
 	 */
 	public boolean delProfesor(@NonNull String nif) {
-		int i=0;
-		i=this.getProfesorIndex(nif);
+		int i=this.getProfesorIndex(nif);
+		if(i==0 || i==profesores.length) return false;
+		
 		if(i<profesores.length) {
 			i--;
 			while(i<this.profesores.length-1
@@ -95,6 +98,15 @@ public class Departamento {
 	 */
 	public boolean delProfesor(@NonNull Profesor profesor) {
 		return this.delProfesor(profesor.getNif());
+	}
+	public boolean delProfesores() {
+		if(this.numProfesores==1) return true;
+		for(int i=1;i<this.profesores.length;i++)
+			this.profesores[i]=null;
+		return false;
+	}
+	public void setSecretaria(Secretaria secretaria) {
+		this.secretaria = secretaria;
 	}
 	@Override
 	public String toString() {
