@@ -21,6 +21,7 @@ public class TestLector {
 		File file = new File("empleados.txt");
 		TestLector testLector = null;
 		Empleado[] empleados = null;
+		//si el fichero no existe o está vacío terminamos el programa
 		if(!file.exists() || (file.exists() && file.length()==0))
 			System.exit(-1);
 			
