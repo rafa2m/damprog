@@ -10,9 +10,22 @@ public class EmpleadoUno {
 	private int salario;
 	private int departamento;
 	private int edad;
+	/**
+	 * Constructor específico para inicializar el nombre
+	 * del empleado
+	 * @param nombre Nombre del empleado
+	 */
 	public EmpleadoUno(String nombre) {
 		this.nombre = nombre;
 	}
+	/** 
+	 * Constructor específico para inicializar un objeto de tipo empleado
+	 * con todas sus propiedades 
+	 * @param nombre Nombre del empleado
+	 * @param salario Salario del empleado
+	 * @param departamento Departamento del empleado
+	 * @param edad Edad del empleado
+	 */
 	public EmpleadoUno(String nombre, int salario, 
 			int departamento, int edad) {
 		this(nombre);
