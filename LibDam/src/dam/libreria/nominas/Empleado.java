@@ -2,10 +2,9 @@ package dam.libreria.nominas;
 
 import org.eclipse.jdt.annotation.NonNull;
 /**
- * Empleado de una empresa
+ * Empleado de una empresa con nómina y contrato
  * @author rafa
  * @version 1.0
- *
  */
 public class Empleado {
 	private Nomina[] nominas;

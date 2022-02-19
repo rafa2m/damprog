@@ -3,7 +3,12 @@ package dam.libreria.nominas;
 import java.time.LocalDate;
 
 import org.eclipse.jdt.annotation.NonNull;
-
+/**
+ * Nómina de un empleado con NSS, base, neto, bruto y fecha
+ * de nómina
+ * @author rafa
+ * @version	 1.0
+ */
 public class Nomina {
 	private Empleado empleado;
 	private String nss;
