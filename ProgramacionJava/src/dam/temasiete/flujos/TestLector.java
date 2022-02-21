@@ -9,7 +9,7 @@ import java.util.StringTokenizer;
 /**
  * Plantilla para realizar la actividad 7.2
  * Leer un fichero de datos de tipo texto y volcar cada línea
- * a un ojbeto del tipo Empleado. Cada objeto se debe guardar en un
+ * a un ojbeto del tipo Empleado{@link Empleado} Cada objeto se debe guardar en un
  * array de empleados, que finalmente se recorrerá y se mostrarán
  * los datos de cada empleado
  * @author rafa

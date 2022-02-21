@@ -1,5 +1,10 @@
 package dam.temasiete.flujos;
-
+/**
+ * Empleado de una empresa, se usa en distintos ejemplos
+ * y actividades
+ * @author rafa
+ * @version 1.0
+ */
 public class Empleado {
 	public static final int TAM_NIF=9;
 	public static final int TAM_NOMBRE=40;
