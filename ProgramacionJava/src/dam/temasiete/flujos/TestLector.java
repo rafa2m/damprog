@@ -21,30 +21,32 @@ public class TestLector {
 		File file = new File("empleados.txt");
 		TestLector testLector = null;
 		Empleado[] empleados = null;
+		int i=0;
 		//si el fichero no existe o está vacío terminamos el programa
 		if(!file.exists() || (file.exists() && file.length()==0))
 			System.exit(-1);
-			
+
 		//si llego aquí significa que el fichero existe y no está vacío		
 		//abrir el flujo de entrada sobre el fichero indicado
 		try {			
 			reader=new BufferedReader(new FileReader(file));			
-			//leer el fichero línea a línea e instanciar objetos de la clase Empleado
-			String line=reader.readLine();
 			//lo siguiente se puede usar cuando las líneas del fichero tienen longitud
 			//fija
 			//empleados = new Empleado[(int)file.length()/line.length()];
-			
+
 			empleados = new Empleado[1000];
-			
+
 			testLector = new TestLector();
-			testLector.juliana(line);
-			/*
-			do {
-				System.out.println(line);
-			}while((line=reader.readLine())!=null);
-			*/
-							
+			//leer el fichero línea a línea e instanciar objetos de la clase Empleado
+			String line=null;
+			
+			while((line=reader.readLine())!=null) {
+				empleados[i++]=testLector.juliana(line);
+			}			
+			for(Empleado empleado:empleados) {
+				System.out.println(empleado);
+			}
+
 		}catch (FileNotFoundException e) {
 			//tratar el error cuando el fichero no existe
 		}catch(IOException e) {	
@@ -59,7 +61,7 @@ public class TestLector {
 				}
 		}			
 		//guardara cada objeto de la clase Empleado en el array de Empleados
-		
+
 		//recorrer el array de Empleados mostrar sus datos en consola
 	}
 	/**
@@ -69,10 +71,22 @@ public class TestLector {
 	 * @return Objeto de la clase Empleado
 	 */
 	private Empleado juliana(String line) {
+		Empleado empleado;
+		String[] campos;
+		int i=0;
 		StringTokenizer st = new StringTokenizer(line,",");
-		while(st.hasMoreElements())
-			System.out.println(st.nextToken());
-		return null;
+		campos = new String[st.countTokens()];
+		//nif,nombre,sueldo,edad,baja
+		//nif
+		while(st.hasMoreTokens()) {
+			campos[i++] = st.nextToken();
+		}
+		empleado = new Empleado(campos[0],
+				campos[1],Integer.valueOf(campos[3]),
+				Float.valueOf(campos[2]),
+				Boolean.valueOf(campos[4]));
+
+		return empleado;
 	}
 	private Empleado juliana(String line, char separator) {
 		return null;

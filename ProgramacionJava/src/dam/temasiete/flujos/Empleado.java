@@ -13,7 +13,8 @@ public class Empleado {
 	private float sueldo;
 	private boolean baja;
 	
-	public Empleado(String nif, String nombre, int edad, float sueldo, boolean baja) {
+	public Empleado(String nif, String nombre, 
+			int edad, float sueldo, boolean baja) {
 		this.setNif(nif);
 		this.setNombre(nombre);
 		this.edad = edad;
@@ -33,6 +34,12 @@ public class Empleado {
 		while(this.nif.length()<TAM_NIF) {
 			this.nif +=" ";
 		}		
+	}
+	
+	@Override
+	public String toString() {
+		return "Empleado [nif=" + nif + ", nombre=" + nombre + ", edad=" + edad + ", sueldo=" + sueldo + ", baja="
+				+ baja + "]";
 	}
 	public String getNombre() {
 		return nombre;
