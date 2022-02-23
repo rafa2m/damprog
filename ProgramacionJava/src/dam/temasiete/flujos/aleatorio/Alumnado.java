@@ -65,5 +65,10 @@ public class Alumnado {
 	}
 	public long getNumero() {
 		return numero;
+	}
+	@Override
+	public String toString() {
+		return "Alumnado [numero=" + numero + ", nombre=" + nombre + ", domicilio=" + domicilio + ", edad=" + edad
+				+ ", telefono=" + telefono + ", correo=" + correo + "]";
 	}	
 }

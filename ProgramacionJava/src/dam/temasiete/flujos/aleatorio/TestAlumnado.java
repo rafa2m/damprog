@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.RandomAccessFile;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class TestAlumnado {
@@ -33,6 +34,8 @@ public class TestAlumnado {
 					numero = sc.nextLong();
 					if(!this.buscarAlumnado(numero)) {
 						System.out.println("El alumno/a con número " + numero + " no se encuentra");
+					}else {
+						System.out.println("Alumno/a con número " + numero + " se ha encontrado en el fichero");
 					}
 				}else {
 					System.out.println("No hay alumnos/as registrados");
@@ -61,7 +64,7 @@ public class TestAlumnado {
 			int numRegistros = (int)raf.length()/Alumnado.TAM_REGISTRO;
 
 			while(pos<numRegistros && !encontrado) {				
-				double numeroLeido = raf.readDouble();
+				double numeroLeido = raf.readLong();
 				if(numeroLeido==numero) encontrado=true;
 				else {
 					pos++;
@@ -105,8 +108,8 @@ public class TestAlumnado {
 			raf.writeLong(alumnado.getNumero());//+8
 			raf.writeChars(alumnado.getNombre());//+80
 			raf.writeChars(alumnado.getDomicilio());//+120
-			raf.write(alumnado.getEdad());//+4
-			raf.write(alumnado.getTelefono());//+4
+			raf.writeInt(alumnado.getEdad());//+4
+			raf.writeInt(alumnado.getTelefono());//+4			
 			raf.writeChars(alumnado.getCorreo());//+60
 			raf.close();
 		} catch (IOException e) {
@@ -114,6 +117,66 @@ public class TestAlumnado {
 		}
 	}
 	private void mostrarAlumnado() {
-
+		RandomAccessFile raf=null;
+		try {
+			long numero;
+			int edad, telefono;
+			Alumnado alumnado=null;
+			byte[] nombre,correo,domicilio;
+			nombre = new byte[2*Alumnado.TAM_NOMBRE];
+			correo = new byte[2*Alumnado.TAM_CORREO];
+			domicilio = new byte[2*Alumnado.TAM_DOMICILIO];
+			//abrir el flujo para leer
+			raf = new RandomAccessFile(FICHERO,"r");
+			//leer cada cada campo del registro y utilizar la información
+			//para instanciar un objeto de la clase Alumnado
+			int numRegistros = (int)raf.length()/Alumnado.TAM_REGISTRO;
+			for(int i=0;i<numRegistros;i++) {				
+				raf.seek(i*Alumnado.TAM_REGISTRO);
+				//comienzo a leer los campos de cada registro
+				numero = raf.readLong();//8 bytes
+				//leo el nombre
+				raf.read(nombre); //80 bytes				
+				//leo domiclio
+				raf.read(domicilio); //120 bytes
+				//leo la edad
+				edad = raf.readInt(); //4 bytes
+				//leo el teléfono
+				telefono = raf.readInt();				
+				raf.read(correo);
+				
+				alumnado = new Alumnado(convertByteArray(nombre),
+						convertByteArray(domicilio),edad,telefono,
+						convertByteArray(correo));
+				//por cada objeto anterior se invocará el método toString() para
+				//mostrar información del mismo
+				System.out.println(alumnado);				
+			}
+		} catch (IOException e) {		
+			e.printStackTrace();
+		} finally {
+			//cerrar el flujo
+			if(raf!=null)
+				try {
+					raf.close();
+				} catch (IOException e) {					
+					e.printStackTrace();
+				}
+		}						
+	}
+	/**
+	 * Convierte un array de bytes a una cadena de caracteres sin espacios antes
+	 * ni al final de la misma
+	 * @param campo Array de bytes a convertir
+	 * @return Cadena vacío o una cadena que representa a los bytes recibidos
+	 * como parámetro
+	 */
+	private String convertByteArray(byte[] campo) {
+		String res = "";
+		for(int i=0;i<campo.length;i++) {
+			if(campo[i]!=0)
+				res += (char)campo[i];
+		}
+		return res.trim();
 	}
 }
