@@ -5,7 +5,11 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-
+/**
+ * Prueba de flujos de objetos usando serialización
+ * @author rafa
+ * @version 1.0
+ */
 public class TestSerializable {
 	public static void main(String[] args) {		
 		try {
