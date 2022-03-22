@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<VBox xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17" fx:controller="dam.temaocho.escena.FMXLControlador">
+   <children>
+      <HBox prefWidth="200.0">
+         <children>
+            <Label text="Identificación" />
+            <TextField fx:id="tfIdenficacion" />
+         </children>
+      </HBox>
+      <HBox prefWidth="200.0">
+         <children>
+            <Label text="Nombre" />
+            <TextField fx:id="tfNombre" />
+         </children>
+      </HBox>
+      <HBox prefWidth="200.0">
+         <children>
+            <Label text="Fecha entrada" />
+            <DatePicker fx:id="dtFechaEntrada" />
+         </children>
+      </HBox>
+      <HBox prefWidth="200.0">
+         <children>
+            <Button fx:id="btGuardar" mnemonicParsing="false" onMouseClicked="#guardar" text="Guardar" />
+            <Button fx:id="btAniadir" mnemonicParsing="false" onMouseClicked="#anidadir" text="Añadir" />
+         </children>
+      </HBox>
+   </children>
+</VBox>
