@@ -19,9 +19,6 @@ public class TestArrays {
 		for(int i=0;i<salarios.length;i++)
 			System.out.println(salarios[i]);
 		
-		Empleado[] empleados = new Empleado[5];
-		
-		
 		int[][] tablero = new int[4][];
 		//cada vez que cambio de fila, el número de columnas
 		//se incrementa en una unidad	
