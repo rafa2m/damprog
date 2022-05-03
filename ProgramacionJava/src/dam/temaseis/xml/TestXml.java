@@ -23,7 +23,11 @@ import org.w3c.dom.NodeList;
 import org.w3c.dom.Text;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
-
+/**
+ * Ejemplo de manipulación de XML y DOM
+ * @author rafa
+ * @version 1.0
+ */
 public class TestXml {
 
 	public static void main(String[] args) {
@@ -72,6 +76,9 @@ public class TestXml {
 			System.out.println("Se ha eliminado el nodo Book con id 3");
 		txml.domToFile(document);
 	}
+	/**
+	 * Convierte una cadena XML a objeto de tipo DOM
+	 */
 	private void stringToDom() {
 		String xmlDocument = "<?xml version='1.0' encoding='UTF-8' ?>"
 				+ "<library>"
@@ -118,6 +125,10 @@ public class TestXml {
 			e.printStackTrace();
 		}
 	}
+	/**
+	 * Convierte un DOM a un fichero XML
+	 * @param document Objeto DOM a convertir
+	 */
 	private void domToFile(@NonNull Document document) {
 		try {
 			// 1º Creamos una instancia de la clase File para acceder al archivo donde guardaremos el XML.
@@ -144,10 +155,21 @@ public class TestXml {
 		}
 
 	}
+	/**
+	 * Elimina el nodo indicado como parámtro
+	 * @param document DOM sobre el que se realizará la eliminación
+	 * @param id Identificador del nodo a eliminar
+	 * @return True si lo elimina
+	 */
 	private boolean removeNode(@NonNull Document document,@NonNull String id) {
 		Element element=document.getElementById(id);				
 		return element.getParentNode().removeChild(element)!=null;	
 	}
+	/**
+	 * Obtiene un nodo por el nombre de su tipo
+	 * @param nodeType Tipo de nodo
+	 * @return Cadena con el nombre del tipo del nodo
+	 */
 	private String getNodeTypeName(int nodeType) {
 		switch(nodeType) {
 		case Node.ELEMENT_NODE:
@@ -162,7 +184,14 @@ public class TestXml {
 			return "";
 		}
 	}
-	private NodeList getChilds(@NonNull Document document, @NonNull Element element) {
+	/**
+	 * Obtiene los nodos hijos de uno dado como parámetro
+	 * @param document DOM del que se van a obtener los nodos hijos
+	 * @param element Nodo a partir del cual se obtendrán los hijos
+	 * @return Lista de nodos hijos
+	 */
+	private NodeList getChilds(@NonNull Document document, 
+			@NonNull Element element) {
 		NodeList nodeList=element.getChildNodes();
 		for (int i=0; i<nodeList.getLength();i++) {
 			Node nodo=nodeList.item(i);
@@ -181,7 +210,14 @@ public class TestXml {
 		}
 		return nodeList;
 	}
-	private Element findElementByTagName(@NonNull Document document,@NonNull String tagName) {
+	/**
+	 * Obtener un elemento del DOM a partir de la etiqueta de un nodo dado
+	 * @param document DOM sobre le que se obtiene el nodo
+	 * @param tagName Etiqueta del nodo a buscar
+	 * @return Null si no se encuentra o la instancia del nodo encontrado
+	 */
+	private Element findElementByTagName(@NonNull Document document,
+			@NonNull String tagName) {
 		NodeList listaNodos=document.
 				getElementsByTagName(tagName);
 		Element cliente=null;
@@ -190,6 +226,10 @@ public class TestXml {
 		}
 		return cliente;
 	}
+	/**
+	 * Convierte un fichero XML a un objeto DOM
+	 * @return Devuelve el objeto DOM correspondiente a un fichero XML
+	 */
 	private Document xmlFileToDom() {
 		try {
 			URI uriFile = getFileFromResource("library.xml");
@@ -209,6 +249,10 @@ public class TestXml {
 		}  
 		return null;
 	}
+	/**
+	 * Crea un nuevo nodo en el DOM pasado como parámetro
+	 * @param document DOM sobre el que se creará el nuevo nodo
+	 */
 	private void newNode(@NonNull Document document) {
 		Element bookNode=document.
 				createElement("Book");
@@ -237,6 +281,11 @@ public class TestXml {
 
 		document.getDocumentElement().appendChild(bookNode);
 	}
+	/**
+	 * Obtiene la URI de un fichero
+	 * @param fileName Nombre del fichero para construir la URI
+	 * @return URI del fichero indicado
+	 */
 	private URI getFileFromResource(String fileName) {
 		URL resource=null;
 		URI uri = null;
