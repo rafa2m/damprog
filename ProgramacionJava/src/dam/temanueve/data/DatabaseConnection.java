@@ -2,12 +2,13 @@ package dam.temanueve.data;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
-
 import org.eclipse.jdt.annotation.NonNull;
-
+/**
+ * Gestor de conexiones a la base de datos
+ * @author rafa
+ * @version 1.0
+ */
 public class DatabaseConnection {
 	private Connection connection;
 	//"jdbc:mysql://localhost/biblioteca?user=root&password=root"

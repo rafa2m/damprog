@@ -5,12 +5,21 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-
 import org.eclipse.jdt.annotation.NonNull;
-
+/**
+ * Gestor de la base de datos
+ * @author rafa
+ * @version 1.0
+ */
 public class DatabaseManager {
 	private Connection connection=null;
 	private Statement statement=null;
+	/**
+	 * Constructor especializado en inicializar objetos
+	 * de tipo DatabaseManager a partir de un objeto de conexión
+	 * que no puede ser nulo
+	 * @param connection Objeto de conexión
+	 */
 	public DatabaseManager(@NonNull Connection connection) {
 		this.connection = connection;
 		try {
@@ -19,6 +28,10 @@ public class DatabaseManager {
 			e.printStackTrace();
 		}
 	}	
+	/**
+	 * Obtiene todos los medicamentos en una lista
+	 * @return Lista de medicamentos
+	 */
 	public ArrayList<Drug> getDrugs() {
 		ArrayList<Drug> drugs = new ArrayList<Drug>();
 		Drug drug = null;			
@@ -40,6 +53,12 @@ public class DatabaseManager {
 		}
 		return drugs;
 	}
+	/**
+	 * Método de utilidad para saber el tipo que corresponde
+	 * a un Statement
+	 * @param statement Instrucción de la que se quiere obtener el tipo
+	 * @return Nombre del tipo de instrucción
+	 */
 	public static String getResultSetType(Statement statement) {
 		//obtener el tipo de ResultSet y el modo de acceso
 		int resultSetType;
@@ -62,6 +81,12 @@ public class DatabaseManager {
 		}
 		return resultSetTypeName;
 	}
+	/**
+	 * Método de utilidad para saber el modo de acceso que corresponde
+	 * a un Statement
+	 * @param statement Instrucción de la que se quiere obtener el modo de acceso
+	 * @return Nombre del modo de acceso de la instrucción
+	 */
 	public static String getResultSetMode(Statement statement) {
 		String resultSetModeName="";
 		int resultSetMode;
