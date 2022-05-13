@@ -1,6 +1,5 @@
 package dam.temaseis.conjuntos;
 
-import java.util.Collections;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
 

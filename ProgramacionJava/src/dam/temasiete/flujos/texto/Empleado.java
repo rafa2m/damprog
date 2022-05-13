@@ -1,4 +1,4 @@
-package dam.temasiete.flujos;
+package dam.temasiete.flujos.texto;
 /**
  * Empleado de una empresa, se usa en distintos ejemplos
  * y actividades

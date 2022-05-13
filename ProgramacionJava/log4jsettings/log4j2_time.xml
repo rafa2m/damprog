@@ -5,7 +5,7 @@
 	</Properties>
 	<Appenders>
 		<RollingFile name="RollingFile">
-			<FileName>${basePath}/roll-by-time/mylog.log</FileName>
+			<FileName>${basePath}/roll-by-time/mylogtime.log</FileName>
 			<FilePattern>${basePath}/roll-by-time/%d{yyyy-MM-dd-hh-mm}.log
 			</FilePattern>
 			<PatternLayout>
@@ -20,7 +20,7 @@
 		</RollingFile>
 	</Appenders>
 	<Loggers>
-		<Logger name="dam.tematres.logapache" level="error" additivity="false">
+		<Logger name="dam.tematres.examen.exlog" level="debug" additivity="false">
 			<AppenderRef ref="RollingFile" />
 		</Logger>
 	</Loggers>

@@ -7,6 +7,16 @@ public class Contenedora {
 	{ 
 		this.i=i;
 	}
+	public void testInternaAnonima(final String valor) {
+		//clase interna anónima
+		Comparable evento = new Comparable() {			
+			@Override
+			public int compareTo(Object arg0) {	
+				return arg0.toString().compareTo(valor);
+			}		
+		};
+		System.out.println(evento.compareTo("Java"));
+	}
 	public void printContenedora (InternaMiembro interna)
 	{
 		//acceso a un miembro de la clase interna

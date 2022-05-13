@@ -12,6 +12,7 @@ public class Drug implements Comparator<Drug>{
 	private String drugName;
 	private String drugCompany;
 	private String drugGeneric;
+	private DrugType type;
 	/**
 	 * Constructor especializado en crear objetos de tipo Drug
 	 * con todas sus propiedades
@@ -71,6 +72,5 @@ public class Drug implements Comparator<Drug>{
 	}
 	public int getId() {
 		return id;
-	}
-		
+	}		
 }

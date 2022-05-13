@@ -1,5 +1,7 @@
 package dam.temacuatro.relaciones;
+
 import org.eclipse.jdt.annotation.NonNull;
+
 /**
  * Relaciones entre clases, representando cardinalidades
  * @author rafa

@@ -21,18 +21,20 @@ public class TestLog4jConfig {
 			"/home/rafa/git/programacion/java/ProgramacionJava/log4jsettings/log4j2_time.xml");
 		//se inicializa el objeto Logger
 		loggerError = LogManager.getLogger(TestLog4jConfig.class);
-		for(int i=0;i<120;i++) {
+		for(int i=0;i<60;i++) {
 			//se registran mensajes de nivel ERROR cada segundo
 			loggerError.error("Error message!!!");
-			Thread.sleep(1000);
+			//Thread.sleep(1000);
 		}
+		loggerError = null;
+		
 		System.setProperty("log4j.configurationFile",
 				"/home/rafa/git/programacion/java/ProgramacionJava/log4jsettings/log4j2_size.xml");
 		loggerError = LogManager.getLogger(TestLog4jConfig.class);
-		for(int i=0;i<120;i++) {
+		for(int i=0;i<60;i++) {
 			//se registran mensajes de nivel DEBUG, cada 1KB se creará un nuevo fichero de log
-			loggerError.debug("Debug message!!!");
-			Thread.sleep(1000);
+			loggerError.error("Debug message!!!");
+			//Thread.sleep(1000);
 		}
 		loggerError=null;
 	}

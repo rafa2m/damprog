@@ -18,6 +18,7 @@ public class TestIterator {
 		
 		empleados.add(empleado1);
 		empleados.add(empleado2);		
+		
 		//se obtiene el iterador de la lista
 		Iterator<Empleado> it = empleados.iterator();
 		while(it.hasNext()) {

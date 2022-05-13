@@ -5,7 +5,7 @@ public class Centro {
 	private SecretariaDepartamento[] secretariaDepartamento 
 	= new SecretariaDepartamento[10];
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) {		
 		//aquí pondremos todos los casos de prueba posibles
 		//1. Que se intente asignar una secretaria o departamento nulos
 		//2. Que se intente asignar una secretearia ya asignada

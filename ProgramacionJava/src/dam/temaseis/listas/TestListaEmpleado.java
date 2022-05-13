@@ -2,6 +2,9 @@ package dam.temaseis.listas;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Iterator;
+
+import org.eclipse.jdt.annotation.NonNull;
 
 /**
  * Solución propuesta para la actividad 6.3.1
@@ -20,7 +23,7 @@ public class TestListaEmpleado {
 		
 		//pedir en un menú el campo de ordenación y recogerlo
 		//según la constante correspondiente
-		tle.ordenarLista(Empleado.ORDENAR_EDAD);
+		tle.ordenarLista(Empleado.ORDENAR_EDAD, Empleado.ORDEN_DESC);
 		for(Empleado e:tle.empleados)
 			System.out.println(e);
 		
@@ -69,8 +72,28 @@ public class TestListaEmpleado {
 	 * Ordena la lista de empleados por el campo de ordeanación indicado
 	 * @param ordenacion Campo de ordenación
 	 */
-	public void ordenarLista(int ordenacion) {
+	public void ordenarLista(int ordenacion, int sentido) {
 		Empleado.ordenacion=ordenacion;
+		Empleado.sentidoOrdenacion = sentido;
 		Collections.sort(this.empleados,this.empleados.get(0));
+	}
+	public void nuevoEmpleado(@NonNull Empleado empleado) {
+		boolean encontrado = false;
+		Empleado empleadoAnterior=null;
+		this.ordenarLista(Empleado.ORDENAR_EDAD, Empleado.ORDEN_ASC);
+		Iterator<Empleado> iterator = this.empleados.iterator();
+		while(!encontrado && iterator.hasNext()) {
+			empleadoAnterior = (Empleado)iterator.next();
+			if(empleado.getEdad()<=empleadoAnterior.getEdad()) {
+				empleados.add(empleados.indexOf(empleadoAnterior),empleado);
+				encontrado=true;
+			}	
+		}
+	}
+	public void eliminarEmpleadoMayor() {
+		this.ordenarLista(Empleado.ORDENAR_EDAD,Empleado.ORDEN_ASC);
+		Empleado empleadoEliminar = 
+				(Empleado)Collections.max(this.empleados, this.empleados.get(0));
+		this.empleados.remove(empleadoEliminar);
 	}
 }

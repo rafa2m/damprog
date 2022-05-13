@@ -5,7 +5,7 @@
 	</Properties>
 	<Appenders>
 		<RollingFile name="rollBySize">
-			<FileName>${basePath}/roll-by-size/mylog.log</FileName>
+			<FileName>${basePath}/roll-by-size/mylogsize.log</FileName>
 			<FilePattern>${basePath}/roll-by-size/mylog-%i.log
 			</FilePattern>
 			<PatternLayout>
@@ -15,7 +15,7 @@
 			<Policies>
 				<!-- Regla de creación de cada nuevo fichero, 
 				cada vez que se supere 1KB de tamaño -->
-				<SizeBasedTriggeringPolicy size="1 KB" />
+				<SizeBasedTriggeringPolicy size="128 B" />
 			</Policies>
 			<DefaultRolloverStrategy max="5"/>
 		</RollingFile>

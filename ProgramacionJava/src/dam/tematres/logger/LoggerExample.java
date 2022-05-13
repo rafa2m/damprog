@@ -2,8 +2,9 @@ package dam.tematres.logger;
 
 import java.io.IOException;
 import java.util.Scanner;
-import java.util.logging.Logger;
 import java.util.logging.Level;
+import java.util.logging.Logger;
+
 
 public class LoggerExample {
 	private String ruta;

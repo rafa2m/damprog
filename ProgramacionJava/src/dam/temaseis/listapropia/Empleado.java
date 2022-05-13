@@ -35,7 +35,7 @@ public class Empleado implements Comparator{
 	}
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
-	}
+	}	
 	public String getNif() {
 		return nif;
 	}
@@ -52,5 +52,5 @@ public class Empleado implements Comparator{
 		e1 = (Empleado)arg0;
 		e2 = (Empleado)arg1;
 		return e1.getNif().compareTo(e2.getNif());
-	}	
+	}
 }

@@ -12,7 +12,7 @@ public class Empleado implements Comparator{
 	}	
 	@Override
 	public int hashCode() {
-		return Objects.hash(nif, nombre);
+		return Objects.hash(nif);
 	}
 	@Override
 	public boolean equals(Object obj) {

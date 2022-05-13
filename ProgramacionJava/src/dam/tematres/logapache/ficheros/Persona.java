@@ -3,8 +3,6 @@ package dam.tematres.logapache.ficheros;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import dam.tematres.logapache.TestLog4j;
-
 public class Persona {
 	private String nombre;
 	private byte edad;

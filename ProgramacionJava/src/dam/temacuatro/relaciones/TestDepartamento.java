@@ -37,11 +37,17 @@ public class TestDepartamento {
 		
 		//se elimina el primer profesor del departamento
 		//y se vuelven a mostrar los profesores/as del departamento
-		departamento.delProfesor(profesora);
+		if(departamento.delProfesor(profesor)) {
+			profesora = null;
+		}
 		System.out.println("En el departamento de " +
 				departamento.getNombre() + " hay " + 
 				departamento.getNumProfesores()+ " profesores/as");
 		for(int i=0;i<profesores.length;i++)
 			System.out.println(profesores[i]);
+		
+		
+		departamento = null;
+		System.out.println();
 	}
 }

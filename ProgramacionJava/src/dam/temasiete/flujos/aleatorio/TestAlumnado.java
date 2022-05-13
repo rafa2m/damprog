@@ -81,7 +81,10 @@ public class TestAlumnado {
 
 	}
 	private void eliminarAlumnado(long numero) {
-
+		//buscar el alumno
+		
+		//si el alumno existe se elimina
+		
 	}
 	private void aniadirAlumnado() {
 		try {			

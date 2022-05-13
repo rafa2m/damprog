@@ -1,4 +1,4 @@
-package dam.temasiete.flujos;
+package dam.temasiete.flujos.texto;
 
 import java.io.File;
 import java.io.FileOutputStream;

@@ -14,7 +14,10 @@ public class Empleado implements Comparator{
 	public static final int ORDENAR_NOMBRE=1;
 	public static final int ORDENAR_EDAD=2;
 	public static final int ORDENAR_FECHA_ALTA=3;
+	public static final int ORDEN_ASC=1;
+	public static final int ORDEN_DESC=-1;
 	public static int ordenacion=0;
+	public static int sentidoOrdenacion=0;
 	private int edad;
 	private String nombre;
 	private String nif;
@@ -51,17 +54,17 @@ public class Empleado implements Comparator{
 		Empleado emp2 = (Empleado)arg1;
 		switch(Empleado.ordenacion) {
 		case ORDENAR_NIF:
-			return emp1.getNif().compareTo(emp2.getNif());
+			return emp1.getNif().compareTo(emp2.getNif())*Empleado.sentidoOrdenacion;
 		case ORDENAR_NOMBRE:
-			return emp1.getNombre().compareTo(emp2.getNombre());
+			return emp1.getNombre().compareTo(emp2.getNombre())*Empleado.sentidoOrdenacion;
 		case ORDENAR_EDAD:
-			return emp1.getEdad()==emp2.getEdad()?0:
-				emp1.getEdad()>emp2.getEdad()?1:-1;
+			return (emp1.getEdad()==emp2.getEdad()?0:
+				emp1.getEdad()>emp2.getEdad()?1:-1)*Empleado.sentidoOrdenacion;
 		case ORDENAR_FECHA_ALTA:
-			return emp1.getFechaAlta()==emp2.getFechaAlta()?0:
-				emp1.getFechaAlta().isAfter(emp2.getFechaAlta())?1:-1;
+			return (emp1.getFechaAlta()==emp2.getFechaAlta()?0:
+				emp1.getFechaAlta().isAfter(emp2.getFechaAlta())?1:-1)*Empleado.sentidoOrdenacion;
 		default:
-			return emp1.getNif().compareTo(emp2.getNif());
+			return emp1.getNif().compareTo(emp2.getNif())*Empleado.sentidoOrdenacion;
 		}
 	}
 	public String getNombre() {

@@ -42,9 +42,9 @@ public class TestEmpresa {
 		Descendiente[] descendientes = new Descendiente[2];
 		descendientes[0] = new Descendiente();
 		descendientes[1] = new Descendiente();
-		//esta línea da error porque el array es de un tipo
+		//la siguiente línea da error porque el array es de un tipo
 		//de objetos que no implementa la interfaz Comparable
-		TestEmpresa.sortDam(descendientes);
+		//TestEmpresa.sortDam(descendientes);
 	}
 	public static void sortDam(Comparable[] comparables) {
 

@@ -1,6 +1,7 @@
 package dam.temacuatro.relaciones;
 
 import org.eclipse.jdt.annotation.NonNull;
+
 /**
  * Control de cardinalidad mínima en una relación 1 a 1 y control
  * para evitar que una secretaría tiene ya asociado el departamento que se pasa
