@@ -20,7 +20,13 @@ public class TestDatabase {
 			
 			//código para la eliminación de duplicados en la
 			//tabla tarjeta
-			databaseManager.deleteDuplicatesTarjeta();
+			//databaseManager.deleteDuplicatesTarjeta();
+			
+			//prueba de llamada a un procedimiento almacenado
+			//databaseManager.getCardsType("jcb");
+			
+			//prueba de consulta con PreparedStatement
+			databaseManager.getCard("a4017951969682");
 		}
 	}
 }

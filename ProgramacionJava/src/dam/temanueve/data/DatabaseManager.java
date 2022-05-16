@@ -1,6 +1,8 @@
 package dam.temanueve.data;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -30,6 +32,60 @@ public class DatabaseManager {
 		try {
 			this.statement = connection.createStatement();
 			this.drugsData = new ArrayList<Drug>();
+		} catch (SQLException e) {			
+			e.printStackTrace();
+		}
+	}
+	/**
+	 * Método de ejemplo para llamar a un procedimiento almacenado
+	 * con parámetros de entrada y salida. El método calcula el número 
+	 * de tarjetas de un tipo determinado
+	 * @param tipo Tipo de tarjeta que se busca
+	 */
+	public void getCardsType(String tipo) {
+		int total=0;
+		CallableStatement cs;
+		try {
+			cs = this.connection.prepareCall("{CALL pa_count_cards(?,?)}");
+			//asigno el valor del parámetro de entrada
+			cs.setString(1, tipo);
+			//asigno la variable para recoger el resultado del procedimiento
+			cs.registerOutParameter(2,java.sql.Types.VARCHAR);
+			//se ejecuta la llamada al procedimiento
+			cs.execute();
+			//se recoge el valor devuelto teniendo en cuenta la posición del
+			//parámetro de tipo salida
+			total = cs.getInt(2);
+			System.out.println(total);
+			cs.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}				
+	}
+	/**
+	 * Método de ejemplo para PreparedStatement. Muestra todos
+	 * los datos de una tarjeta cuyo número se pasa como parámetro
+	 * @param numero Número de la tarjeta que se busca
+	 */
+	public void getCard(String numero) {
+		try {
+			PreparedStatement ps = this.connection.prepareStatement("SELECT * FROM tarjeta"
+					+ " WHERE numero=?");
+			//asigno el valor del parámetro
+			ps.setString(1, numero);
+			//ejecuto la consulta
+			ResultSet rs = ps.executeQuery();
+			//compruebo que haya algún registro
+			//si no está después del último y no está antes que
+			//el primer registro, es que no hay registros
+			if(!rs.isAfterLast() && !rs.isBeforeFirst()) return;
+			//muevo el puntero de registro al primer registro
+			rs.next();
+			System.out.println(rs.getString(1) + "," + rs.getString(2) + 
+					"," + rs.getString(3));
+			//cierro el statement
+			ps.close();
 		} catch (SQLException e) {			
 			e.printStackTrace();
 		}
